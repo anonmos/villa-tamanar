@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<head>
+  <style>
+    body {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <video id="first-video" muted autoplay>
+    <source src="./assets/Intro_1.mp4">
+  </video>
+  <img style="width: 100%; margin: -5px 0 0;" src="./assets/second-image.png" />
+  <div style="display: flex; justify-content: center; align-items: center; margin: 100px 0;">
+    <img style="width: 60%;" src="./assets/dimensions.svg" />
+  </div>
+  <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+    <video id="second-video" muted autoplay>
+      <source src="./assets/section-2.mp4">
+    </video>
+    <div style="display: flex; justify-content: flex-end; width: 100%; margin: -84px 0 0;">
+      <img style="width: 90%;" src="./assets/specs.svg" />
+    </div>
+  </div>
+  <div style="margin-top: 140px; width: 100%; display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+    <img style="width: 55%;" src="./assets/description-banner-1-image.png" />
+    <div style="display: flex; justify-content: center; align-items: center; width: 35%;">
+      <img style="width: 100%; padding: 30px;" src="./assets/description-banner-1-text.svg">
+    </div>
+  </div>
+  <div style="margin-top: 140px; width: 100%; display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+    <div style="display: flex; justify-content: center; align-items: center; width: 50%;">
+      <img style="width: 70%;" src="./assets/description-banner-2-text.svg">
+    </div>
+    <img style="width: 55%;" src="./assets/description-banner-2-image.png" />
+  </div>
+  <div style="margin-top: 140px; width: 100%; display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+    <img style="width: 55%;" src="./assets/description-banner-3-image.png" />
+    <div style="display: flex; justify-content: center; align-items: center; width: 40%; height: 100%;">
+      <img style="width: 60%;" src="./assets/description-banner-3-text.svg">
+    </div>
+  </div>
+  <div style="margin-top: 140px; width: 100%; display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+    <div style="display: flex; justify-content: center; align-items: center; width: 50%;">
+      <img style="width: 60%;" src="./assets/description-banner-4-text.svg">
+    </div>
+    <img style="width: 55%;" src="./assets/description-banner-4-image.png" />
+  </div>
+  <div style="margin-top: 145px;">
+    <div id="video-overlay" style="position: absolute; width: 100%;">
+      <img style="width: 100%;" src="./assets/quote-vid-overlay.svg">
+    </div>
+    <video id="third-video" muted autoplay>
+      <source src="./assets/quote-01.mp4">
+    </video>
+  </div>
+  <div style="display: flex; justify-content: space-around; align-items: center; margin-top: 185px; width: 100%;">
+    <div style="display: flex; justify-content: center; align-items: flex-start; flex-direction: column; width: 50%;">
+      <img style="width: 60%;" src="./assets/vertical-description-image-1.png"/>
+      <img style="width: 55%;" src="./assets/vertical-description-text-1.svg"/>
+    </div>
+    <div style="display: flex; flex-direction: column; width: 50%; justify-content: space-between;">
+      <img style="width: 50%;" src="./assets/vertical-description-text-2.svg"/>
+      <img style="width: 60%;" src="./assets/vertical-description-image-2.png"/>
+    </div>
+  </div>
+</body>
+</html>
+
+<script>
+  const videoTags = ['first-video', 'third-video'];
+  const specialVideoTagWidth = 'second-video'
+
+  const specialVideoWidthVideoElement = document.getElementById(specialVideoTagWidth);
+  const specialVideoWidth = Math.round(window.innerWidth * 0.98);
+  specialVideoWidthVideoElement.setAttribute('width', specialVideoWidth)
+
+  for (let i = 0; i < videoTags.length; i++) {
+    const video = document.getElementById(videoTags[i])
+    video.setAttribute('width', window.innerWidth)
+  }
+
+  for (let i = 0; i < [...videoTags, specialVideoTagWidth].length; i++) {
+    const video = document.getElementById(videoTags[i])
+    video.addEventListener('ended', () => {
+      video.play()
+    })
+  }
+
+
+  // const secondVideoIntersectionObserver = new IntersectionObserver()
+</script>
