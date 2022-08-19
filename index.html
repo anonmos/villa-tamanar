@@ -8,7 +8,7 @@
 </head>
 <body>
   <video id="first-video" muted autoplay>
-    <source src="./assets/Intro_1.mp4">
+    <source src="./assets/Homepage.mp4">
   </video>
   <img style="width: 100%; margin: -5px 0 0;" src="./assets/second-image.png" />
   <div style="display: flex; justify-content: center; align-items: center; margin: 100px 0;">
@@ -54,21 +54,36 @@
       <source src="./assets/quote-01.mp4">
     </video>
   </div>
-  <div style="display: flex; justify-content: space-around; align-items: center; margin-top: 185px; width: 100%;">
-    <div style="display: flex; justify-content: center; align-items: flex-start; flex-direction: column; width: 50%;">
+  <div style="display: flex; justify-content: center; align-items: center; margin-top: 185px; width: 100%;">
+    <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; width: 50%;">
       <img style="width: 60%;" src="./assets/vertical-description-image-1.png"/>
-      <img style="width: 55%;" src="./assets/vertical-description-text-1.svg"/>
+      <div style="display: flex; justify-content: flex-start; width: 60%; margin-top: 50px;">
+        <img style="width: 70%;" src="./assets/vertical-description-text-1.svg"/>
+      </div>
     </div>
-    <div style="display: flex; flex-direction: column; width: 50%; justify-content: space-between;">
-      <img style="width: 50%;" src="./assets/vertical-description-text-2.svg"/>
+    <div style="display: flex; flex-direction: column; width: 50%; justify-content: space-between; align-items: center;">
+      <div style="width: 60%; margin-bottom: 50px;">
+        <img style="width: 70%;" src="./assets/vertical-description-text-2.svg"/>
+      </div>
       <img style="width: 60%;" src="./assets/vertical-description-image-2.png"/>
     </div>
+  </div>
+  <div style="margin-top: 200px;">
+    <video id="fourth-video" muted autoplay>
+      <source src="./assets/Section5.mp4">
+    </video>
+  </div>
+  <div style="width: 100%; display: flex; justify-content: center; align-items: center; margin-top: 110px;">
+    <img style="width: 70%" src="./assets/amenities.svg" />
+  </div>
+  <div style="margin-top: 150px;">
+    <img style="width: 100%;" src="./assets/luxury-living-banner.svg" />
   </div>
 </body>
 </html>
 
 <script>
-  const videoTags = ['first-video', 'third-video'];
+  const videoTags = ['first-video', 'third-video', 'fourth-video'];
   const specialVideoTagWidth = 'second-video'
 
   const specialVideoWidthVideoElement = document.getElementById(specialVideoTagWidth);
