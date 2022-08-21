@@ -29,7 +29,8 @@
     <video id="intro-video-player" controls>
       <source src="./assets/Intro_1.mp4" />
     </video>
-    <div id="skip-intro-button" style="width: 180px; height: 50px; position: absolute; background-color: #FFFFFF; right: 0; bottom: 0; display: flex; justify-content: center; align-items: center; cursor: pointer;">
+    <div id="skip-intro-button"
+      style="width: 180px; height: 50px; position: absolute; background-color: #FFFFFF; right: 0; bottom: 0; display: flex; justify-content: center; align-items: center; cursor: pointer;">
       <img src="./assets/skip-intro-button-contents.svg" />
     </div>
   </div>
@@ -178,16 +179,19 @@
         <img style="width: 60%;" src="./assets/gare-banner-text.svg" />
       </div>
     </div>
-    <div id="fifth-video-container" style="display: flex; justify-content: center; align-items: center; position: absolute; width: 100%;">
+    <div id="fifth-video-container"
+      style="display: flex; justify-content: center; align-items: center; position: absolute; width: 100%;">
       <video id="fifth-video" muted autoplay>
         <source src="./assets/Outro.mp4">
       </video>
     </div>
     <div style="width: 100%; display: flex; justify-content: center;">
       <img style="width: 100%;" src="./assets/villa-tamanar-cartoon.png" />
-      <img id="escape-noise-text" style="width: 20%; position: absolute; margin-top: 50px;" src="./assets/villa-tamanar-escape-noise-text.svg" />
+      <img id="escape-noise-text" style="width: 20%; position: absolute; margin-top: 50px;"
+        src="./assets/villa-tamanar-escape-noise-text.svg" />
     </div>
-    <div style="background-color: #232323; height: 200px; display: flex; justify-content: space-around; flex-direction: column; align-items: center; padding: 15px 0;">
+    <div
+      style="background-color: #232323; height: 200px; display: flex; justify-content: space-around; flex-direction: column; align-items: center; padding: 15px 0;">
       <img style="width: 20%;" src="./assets/villa-tamanar-logo.svg" />
       <img id="back-to-top" style="width: 7%; cursor: pointer;" src="./assets/back-to-top.svg" />
       <img style="width: 10%;" src="./assets/copyright.svg" />
@@ -205,19 +209,20 @@
   const outtroVideoTagWidthParentElement = 'fifth-video-container'
   const backToTopElementTag = 'back-to-top'
 
-  // Second video needs a special width so that it's not the full page
-  const specialVideoWidthVideoElement = document.getElementById(specialVideoTagWidth);
-  const specialVideoWidth = Math.round(window.innerWidth * 0.98);
-  specialVideoWidthVideoElement.setAttribute('width', specialVideoWidth)
+  function performLandingPageSetup() {
+    console.log(`Setting up landing page`)
+    // Second video needs a special width so that it's not the full page
+    const specialVideoWidthVideoElement = document.getElementById(specialVideoTagWidth);
+    const specialVideoWidth = Math.round(window.innerWidth * 0.98);
+    specialVideoWidthVideoElement.setAttribute('width', specialVideoWidth)
 
-  // Outtro video needs a special width so that it's not the full page
-  const outtroVideoTagWidthElement = document.getElementById(outtroVideoTagWidth)
-  const outtroVideoWidth = Math.round(window.innerWidth * 0.40);
-  outtroVideoTagWidthElement.setAttribute('width', outtroVideoWidth)
+    // Outtro video needs a special width so that it's not the full page
+    const outtroVideoTagWidthElement = document.getElementById(outtroVideoTagWidth)
+    const outtroVideoWidth = Math.round(window.innerWidth * 0.40);
+    outtroVideoTagWidthElement.setAttribute('width', outtroVideoWidth)
 
-  // Outtro video needs to straddle two elements and needs a negative margin.  Need to calculate
-  // the margin after the page and the video are loaded so that we know the exact video dimensions.
-  outtroVideoTagWidthElement.addEventListener('canplay', () => {
+    // Outtro video needs to straddle two elements and needs a negative margin.  Need to calculate
+    // the margin after the page and the video are loaded so that we know the exact video dimensions.
     const fifthVideoContainerElement = document.getElementById(outtroVideoTagWidth)
     console.log(`Outtro video height reporting as: ${outtroVideoTagWidthElement.offsetHeight}`)
     const fifthVideoContainerElementMargin = Math.round(outtroVideoTagWidthElement.offsetHeight / 2)
@@ -227,43 +232,46 @@
     const escapeNoiseTextElement = document.getElementById('escape-noise-text')
     const escapeNoiseTextElementMarginTop = outtroVideoTagWidthElement.videoHeight
     escapeNoiseTextElement.style.marginTop = `${escapeNoiseTextElementMarginTop}px`
-  })
 
-  const fullSizeVideoTagsArray = [...videoTags, introVideoPlayerTag]
+    const fullSizeVideoTagsArray = [...videoTags]
 
-  // For all full width videos, set the widths based on the browser width
-  fullSizeVideoTagsArray.forEach((tag) => {
-    const video = document.getElementById(tag)
-    video.setAttribute('width', window.innerWidth)
-  })
+    // For all full width videos, set the widths based on the browser width
+    fullSizeVideoTagsArray.forEach((tag) => {
+      const video = document.getElementById(tag)
+      video.setAttribute('width', window.innerWidth)
+    })
 
-  const combinedTagsArray = [...videoTags, specialVideoTagWidth, outtroVideoTagWidth]
+    const combinedTagsArray = [...videoTags, specialVideoTagWidth, outtroVideoTagWidth]
 
-  combinedTagsArray.forEach((currentTag) => {
-    const video = document.getElementById(currentTag)
-    if (video) {
-      video.addEventListener('ended', () => {
-        video.play()
-      })
-    } else {
-      console.log(`Couldn't set auto replay on video element tag ${currentTag}`)
+    combinedTagsArray.forEach((currentTag) => {
+      const video = document.getElementById(currentTag)
+      if (video) {
+        video.addEventListener('ended', () => {
+          video.play()
+        })
+      } else {
+        console.log(`Couldn't set auto replay on video element tag ${currentTag}`)
+      }
+    })
+
+    function scrollTop() {
+      window.scrollTo(0, 0)
     }
-  })
 
-  function scrollTop() {
-    window.scrollTo(0, 0)
+    const backToTopElement = document.getElementById(backToTopElementTag)
+    backToTopElement.onclick = scrollTop
   }
 
   function disableIntroVideoAndEnableMainLandingPage() {
+    console.log(`Disable intro video called`)
     const introVideoElement = document.getElementById('intro-video')
     const landingPageElement = document.getElementById('landing-page')
 
     introVideoElement.style.display = 'none'
     landingPageElement.style.display = 'initial'
-  }
 
-  const backToTopElement = document.getElementById(backToTopElementTag)
-  backToTopElement.onclick = scrollTop
+    performLandingPageSetup()
+  }
 
   // Intro video may be hiding the controls at the bottom of the page, which is confusing because the
   // video starts with a black screen.  Auto-scroll to the bottom so that the player can show its elements.
@@ -272,9 +280,14 @@
     window.scrollTo(0, introVideoElement.offsetHeight)
   })
 
+  introVideoElement.setAttribute('width', window.innerWidth)
+
   introVideoElement.addEventListener('ended', disableIntroVideoAndEnableMainLandingPage)
 
   const skipIntroButtonElement = document.getElementById('skip-intro-button')
-  skipIntroButtonElement.onclick = disableIntroVideoAndEnableMainLandingPage
+  skipIntroButtonElement.onclick = () => {
+    disableIntroVideoAndEnableMainLandingPage()
+    introVideoElement.pause()
+  }
 
 </script>
