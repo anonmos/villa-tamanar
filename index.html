@@ -25,163 +25,173 @@
 </head>
 
 <body>
-  <video id="first-video" muted autoplay>
-    <source src="./assets/Homepage.mp4">
-  </video>
-  <img style="width: 100%; margin: -5px 0 0;" src="./assets/second-image.png" />
-  <div style="display: flex; justify-content: center; align-items: center; margin: 100px 0;">
-    <img style="width: 60%;" src="./assets/dimensions.svg" />
-  </div>
-  <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-    <video id="second-video" muted autoplay>
-      <source src="./assets/section-2.mp4">
+  <div id="intro-video" style="display: flex; justify-content: center;">
+    <video id="intro-video-player" controls>
+      <source src="./assets/Intro_1.mp4" />
     </video>
-    <div style="display: flex; justify-content: flex-end; width: 100%; margin: -84px 0 0;">
-      <img style="width: 90%;" src="./assets/specs.svg" />
+    <div id="skip-intro-button" style="width: 180px; height: 50px; position: absolute; background-color: #FFFFFF; right: 0; bottom: 0; display: flex; justify-content: center; align-items: center; cursor: pointer;">
+      <img src="./assets/skip-intro-button-contents.svg" />
     </div>
   </div>
-  <div
-    style="margin-top: 140px; width: 100%; display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
-    <img style="width: 55%;" src="./assets/description-banner-1-image.png" />
-    <div style="display: flex; justify-content: center; align-items: center; width: 35%;">
-      <img style="width: 100%; padding: 30px;" src="./assets/description-banner-1-text.svg">
-    </div>
-  </div>
-  <div
-    style="margin-top: 140px; width: 100%; display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
-    <div style="display: flex; justify-content: center; align-items: center; width: 50%;">
-      <img style="width: 70%;" src="./assets/description-banner-2-text.svg">
-    </div>
-    <img style="width: 55%;" src="./assets/description-banner-2-image.png" />
-  </div>
-  <div
-    style="margin-top: 140px; width: 100%; display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
-    <img style="width: 55%;" src="./assets/description-banner-3-image.png" />
-    <div style="display: flex; justify-content: center; align-items: center; width: 40%; height: 100%;">
-      <img style="width: 60%;" src="./assets/description-banner-3-text.svg">
-    </div>
-  </div>
-  <div
-    style="margin-top: 140px; width: 100%; display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
-    <div style="display: flex; justify-content: center; align-items: center; width: 50%;">
-      <img style="width: 60%;" src="./assets/description-banner-4-text.svg">
-    </div>
-    <img style="width: 55%;" src="./assets/description-banner-4-image.png" />
-  </div>
-  <div style="margin-top: 145px;">
-    <div id="video-overlay" style="position: absolute; width: 100%;">
-      <img style="width: 100%;" src="./assets/quote-vid-overlay.svg">
-    </div>
-    <video id="third-video" muted autoplay>
-      <source src="./assets/quote-01.mp4">
+  <div id="landing-page" style="display: none;">
+    <video id="first-video" muted autoplay>
+      <source src="./assets/Homepage.mp4">
     </video>
-  </div>
-  <div style="display: flex; justify-content: center; align-items: center; margin-top: 185px; width: 100%;">
-    <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; width: 50%;">
-      <img style="width: 60%;" src="./assets/vertical-description-image-1.png" />
-      <div style="display: flex; justify-content: flex-start; width: 60%; margin-top: 50px;">
-        <img style="width: 70%;" src="./assets/vertical-description-text-1.svg" />
+    <img style="width: 100%; margin: -5px 0 0;" src="./assets/second-image.png" />
+    <div style="display: flex; justify-content: center; align-items: center; margin: 100px 0;">
+      <img style="width: 60%;" src="./assets/dimensions.svg" />
+    </div>
+    <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+      <video id="second-video" muted autoplay>
+        <source src="./assets/section-2.mp4">
+      </video>
+      <div style="display: flex; justify-content: flex-end; width: 100%; margin: -84px 0 0;">
+        <img style="width: 90%;" src="./assets/specs.svg" />
       </div>
     </div>
     <div
-      style="display: flex; flex-direction: column; width: 50%; justify-content: space-between; align-items: center;">
-      <div style="width: 60%; margin-bottom: 50px;">
-        <img style="width: 70%;" src="./assets/vertical-description-text-2.svg" />
+      style="margin-top: 140px; width: 100%; display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+      <img style="width: 55%;" src="./assets/description-banner-1-image.png" />
+      <div style="display: flex; justify-content: center; align-items: center; width: 35%;">
+        <img style="width: 100%; padding: 30px;" src="./assets/description-banner-1-text.svg">
       </div>
-      <img style="width: 60%;" src="./assets/vertical-description-image-2.png" />
     </div>
-  </div>
-  <div style="margin-top: 200px;">
-    <video id="fourth-video" muted autoplay>
-      <source src="./assets/Section5.mp4">
-    </video>
-  </div>
-  <div style="width: 100%; display: flex; justify-content: center; align-items: center; margin-top: 110px;">
-    <img style="width: 70%" src="./assets/amenities.svg" />
-  </div>
-  <div style="margin-top: 150px;">
-    <img style="width: 100%;" src="./assets/luxury-living-banner.svg" />
-  </div>
-  <div style="display: flex; justify-content: center; align-items: center; width: 100%; margin-top: -5px;">
-    <div class="quad-banner-element">
-      <img style="width: 100%;" src="./assets/quad-banner-bedrooms-image.png" />
-      <img class="quad-banner-text" src="./assets/quad-banner-bedrooms-text.svg" />
+    <div
+      style="margin-top: 140px; width: 100%; display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+      <div style="display: flex; justify-content: center; align-items: center; width: 50%;">
+        <img style="width: 70%;" src="./assets/description-banner-2-text.svg">
+      </div>
+      <img style="width: 55%;" src="./assets/description-banner-2-image.png" />
     </div>
-    <div class="quad-banner-element">
-      <img style="width: 100%;" src="./assets/quad-banner-living-space-image.png" />
-      <img class="quad-banner-text" src="./assets/quad-banner-living-space-text.svg" />
+    <div
+      style="margin-top: 140px; width: 100%; display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+      <img style="width: 55%;" src="./assets/description-banner-3-image.png" />
+      <div style="display: flex; justify-content: center; align-items: center; width: 40%; height: 100%;">
+        <img style="width: 60%;" src="./assets/description-banner-3-text.svg">
+      </div>
     </div>
-    <div class="quad-banner-element">
-      <img style="width: 100%;" src="./assets/quad-banner-bathroom-image.png" />
-      <img class="quad-banner-text" src="./assets/quad-banner-bathrooms-text.svg" />
+    <div
+      style="margin-top: 140px; width: 100%; display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+      <div style="display: flex; justify-content: center; align-items: center; width: 50%;">
+        <img style="width: 60%;" src="./assets/description-banner-4-text.svg">
+      </div>
+      <img style="width: 55%;" src="./assets/description-banner-4-image.png" />
     </div>
-    <div class="quad-banner-element">
-      <img style="width: 100%;" src="./assets/quad-banner-outdoor-image.png" />
-      <img style="width: 13%;" class="quad-banner-text" src="./assets/quad-banner-outdoor-text.svg" />
+    <div style="margin-top: 145px;">
+      <div id="video-overlay" style="position: absolute; width: 100%;">
+        <img style="width: 100%;" src="./assets/quote-vid-overlay.svg">
+      </div>
+      <video id="third-video" muted autoplay>
+        <source src="./assets/quote-01.mp4">
+      </video>
     </div>
-  </div>
-  <div
-    style="background-color: #232323; width: 100%; padding: 175px 0 0; display: flex; justify-content: center; align-items: center; flex-direction: column;">
-    <img style="width: 80%;" src="./assets/what-if-banner.svg" />
-    <img style="margin-top: 25px; margin-bottom: 20px;" src="./assets/once-upon-a-time-banner.svg" />
-  </div>
-  <div style="background-color: #232323; width: 100%; overflow-x: scroll; display: flex; padding-bottom: 100px;">
-    <img src="./assets/carousel-image-1.png" />
-    <img src="./assets/carousel-image-2.png" />
-    <img src="./assets/carousel-image-3.png" />
-    <img src="./assets/carousel-image-4.png" />
-    <img src="./assets/carousel-image-5.png" />
-    <img src="./assets/carousel-image-6.png" />
-    <img src="./assets/carousel-image-7.png" />
-    <img src="./assets/carousel-image-8.png" />
-    <img src="./assets/carousel-image-9.png" />
-  </div>
-  <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
-    <img style="width: 100%;" src="./assets/attractive-people-banner-image.png" />
-    <img style="position: absolute; width: 100%;" src="./assets/attractive-people-banner-text.svg" />
-  </div>
-  <div style="margin: 100px 0; display: flex; justify-content: center; align-items: center;">
-    <div style="width: 40%; display: flex; justify-content: center; align-items: center;">
-      <img style="width: 60%;" src="./assets/neighborhood-text.svg" />
+    <div style="display: flex; justify-content: center; align-items: center; margin-top: 185px; width: 100%;">
+      <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; width: 50%;">
+        <img style="width: 60%;" src="./assets/vertical-description-image-1.png" />
+        <div style="display: flex; justify-content: flex-start; width: 60%; margin-top: 50px;">
+          <img style="width: 70%;" src="./assets/vertical-description-text-1.svg" />
+        </div>
+      </div>
+      <div
+        style="display: flex; flex-direction: column; width: 50%; justify-content: space-between; align-items: center;">
+        <div style="width: 60%; margin-bottom: 50px;">
+          <img style="width: 70%;" src="./assets/vertical-description-text-2.svg" />
+        </div>
+        <img style="width: 60%;" src="./assets/vertical-description-image-2.png" />
+      </div>
     </div>
-    <div style="width: 60%;">
-      <img style="width: 100%;" src="./assets/neighborhood-image.png" />
+    <div style="margin-top: 200px;">
+      <video id="fourth-video" muted autoplay>
+        <source src="./assets/Section5.mp4">
+      </video>
     </div>
-  </div>
-  <div
-    style="background-color: #EDF3E6; padding-top: 90px; display: flex; justify-content: center; align-items: center; flex-direction: column;">
-    <img style="width: 80%;" src="./assets/roquebrune-cap-martin-banner-image.png" />
-    <img style="margin: 50px 0; width: 80%;" src="./assets/roquebrune-cap-martin-banner-text.svg" />
-  </div>
-  <div style="width: 100%; display: flex; justify-content: center; margin-top: 130px;">
-    <div style="width: 40%; display: flex; justify-content: center; align-items: center;">
-      <img style="width: 60%;" src="./assets/domain-de-la-torraca-banner-text.svg">
+    <div style="width: 100%; display: flex; justify-content: center; align-items: center; margin-top: 110px;">
+      <img style="width: 70%" src="./assets/amenities.svg" />
     </div>
-    <div style="width: 60%;">
-      <img style="width: 100%;" src="./assets/domain-de-la-torraca-banner-image.png" />
+    <div style="margin-top: 150px;">
+      <img style="width: 100%;" src="./assets/luxury-living-banner.svg" />
     </div>
-  </div>
-  <div style="display: flex; margin-top: 230px; margin-bottom: 460px;">
-    <div style="width: 50%; display: flex; justify-content: center; align-items: center;">
-      <img style="width: 80%;" src="./assets/gare-banner-image.png" />
+    <div style="display: flex; justify-content: center; align-items: center; width: 100%; margin-top: -5px;">
+      <div class="quad-banner-element">
+        <img style="width: 100%;" src="./assets/quad-banner-bedrooms-image.png" />
+        <img class="quad-banner-text" src="./assets/quad-banner-bedrooms-text.svg" />
+      </div>
+      <div class="quad-banner-element">
+        <img style="width: 100%;" src="./assets/quad-banner-living-space-image.png" />
+        <img class="quad-banner-text" src="./assets/quad-banner-living-space-text.svg" />
+      </div>
+      <div class="quad-banner-element">
+        <img style="width: 100%;" src="./assets/quad-banner-bathroom-image.png" />
+        <img class="quad-banner-text" src="./assets/quad-banner-bathrooms-text.svg" />
+      </div>
+      <div class="quad-banner-element">
+        <img style="width: 100%;" src="./assets/quad-banner-outdoor-image.png" />
+        <img style="width: 13%;" class="quad-banner-text" src="./assets/quad-banner-outdoor-text.svg" />
+      </div>
     </div>
-    <div style="width: 50%; display: flex; justify-content: center; align-items: center;">
-      <img style="width: 60%;" src="./assets/gare-banner-text.svg" />
+    <div
+      style="background-color: #232323; width: 100%; padding: 175px 0 0; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+      <img style="width: 80%;" src="./assets/what-if-banner.svg" />
+      <img style="margin-top: 25px; margin-bottom: 20px;" src="./assets/once-upon-a-time-banner.svg" />
     </div>
-  </div>
-  <div id="fifth-video-container" style="display: flex; justify-content: center; align-items: center; position: absolute; width: 100%;">
-    <video id="fifth-video" muted autoplay>
-      <source src="./assets/Outro.mp4">
-    </video>
-  </div>
-  <div style="width: 100%; display: flex; justify-content: center;">
-    <img style="width: 100%;" src="./assets/villa-tamanar-cartoon.png" />
-    <img id="escape-noise-text" style="width: 20%; position: absolute; margin-top: 50px;" src="./assets/villa-tamanar-escape-noise-text.svg" />
-  </div>
-  <div style="background-color: #232323; height: 200px; display: flex; justify-content: space-around; flex-direction: column; align-items: center; padding: 15px 0;">
-    <img style="width: 20%;" src="./assets/villa-tamanar-logo.svg" />
-    <img id="back-to-top" style="width: 7%; cursor: pointer;" src="./assets/back-to-top.svg" />
-    <img style="width: 10%;" src="./assets/copyright.svg" />
+    <div style="background-color: #232323; width: 100%; overflow-x: scroll; display: flex; padding-bottom: 100px;">
+      <img src="./assets/carousel-image-1.png" />
+      <img src="./assets/carousel-image-2.png" />
+      <img src="./assets/carousel-image-3.png" />
+      <img src="./assets/carousel-image-4.png" />
+      <img src="./assets/carousel-image-5.png" />
+      <img src="./assets/carousel-image-6.png" />
+      <img src="./assets/carousel-image-7.png" />
+      <img src="./assets/carousel-image-8.png" />
+      <img src="./assets/carousel-image-9.png" />
+    </div>
+    <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+      <img style="width: 100%;" src="./assets/attractive-people-banner-image.png" />
+      <img style="position: absolute; width: 100%;" src="./assets/attractive-people-banner-text.svg" />
+    </div>
+    <div style="margin: 100px 0; display: flex; justify-content: center; align-items: center;">
+      <div style="width: 40%; display: flex; justify-content: center; align-items: center;">
+        <img style="width: 60%;" src="./assets/neighborhood-text.svg" />
+      </div>
+      <div style="width: 60%;">
+        <img style="width: 100%;" src="./assets/neighborhood-image.png" />
+      </div>
+    </div>
+    <div
+      style="background-color: #EDF3E6; padding-top: 90px; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+      <img style="width: 80%;" src="./assets/roquebrune-cap-martin-banner-image.png" />
+      <img style="margin: 50px 0; width: 80%;" src="./assets/roquebrune-cap-martin-banner-text.svg" />
+    </div>
+    <div style="width: 100%; display: flex; justify-content: center; margin-top: 130px;">
+      <div style="width: 40%; display: flex; justify-content: center; align-items: center;">
+        <img style="width: 60%;" src="./assets/domain-de-la-torraca-banner-text.svg">
+      </div>
+      <div style="width: 60%;">
+        <img style="width: 100%;" src="./assets/domain-de-la-torraca-banner-image.png" />
+      </div>
+    </div>
+    <div style="display: flex; margin-top: 230px; margin-bottom: 460px;">
+      <div style="width: 50%; display: flex; justify-content: center; align-items: center;">
+        <img style="width: 80%;" src="./assets/gare-banner-image.png" />
+      </div>
+      <div style="width: 50%; display: flex; justify-content: center; align-items: center;">
+        <img style="width: 60%;" src="./assets/gare-banner-text.svg" />
+      </div>
+    </div>
+    <div id="fifth-video-container" style="display: flex; justify-content: center; align-items: center; position: absolute; width: 100%;">
+      <video id="fifth-video" muted autoplay>
+        <source src="./assets/Outro.mp4">
+      </video>
+    </div>
+    <div style="width: 100%; display: flex; justify-content: center;">
+      <img style="width: 100%;" src="./assets/villa-tamanar-cartoon.png" />
+      <img id="escape-noise-text" style="width: 20%; position: absolute; margin-top: 50px;" src="./assets/villa-tamanar-escape-noise-text.svg" />
+    </div>
+    <div style="background-color: #232323; height: 200px; display: flex; justify-content: space-around; flex-direction: column; align-items: center; padding: 15px 0;">
+      <img style="width: 20%;" src="./assets/villa-tamanar-logo.svg" />
+      <img id="back-to-top" style="width: 7%; cursor: pointer;" src="./assets/back-to-top.svg" />
+      <img style="width: 10%;" src="./assets/copyright.svg" />
+    </div>
   </div>
 </body>
 
@@ -189,6 +199,7 @@
 
 <script>
   const videoTags = ['first-video', 'third-video', 'fourth-video'];
+  const introVideoPlayerTag = 'intro-video-player'
   const specialVideoTagWidth = 'second-video'
   const outtroVideoTagWidth = 'fifth-video'
   const outtroVideoTagWidthParentElement = 'fifth-video-container'
@@ -218,15 +229,15 @@
     escapeNoiseTextElement.style.marginTop = `${escapeNoiseTextElementMarginTop}px`
   })
 
-  // For all full width videos, set the widths based on the browser width
-  for (let i = 0; i < videoTags.length; i++) {
-    const video = document.getElementById(videoTags[i])
-    video.setAttribute('width', window.innerWidth)
-  }
+  const fullSizeVideoTagsArray = [...videoTags, introVideoPlayerTag]
 
-  const combinedTagsArray = [...videoTags]
-  combinedTagsArray.push(specialVideoTagWidth)
-  combinedTagsArray.push(outtroVideoTagWidth)
+  // For all full width videos, set the widths based on the browser width
+  fullSizeVideoTagsArray.forEach((tag) => {
+    const video = document.getElementById(tag)
+    video.setAttribute('width', window.innerWidth)
+  })
+
+  const combinedTagsArray = [...videoTags, specialVideoTagWidth, outtroVideoTagWidth]
 
   combinedTagsArray.forEach((currentTag) => {
     const video = document.getElementById(currentTag)
@@ -243,6 +254,27 @@
     window.scrollTo(0, 0)
   }
 
+  function disableIntroVideoAndEnableMainLandingPage() {
+    const introVideoElement = document.getElementById('intro-video')
+    const landingPageElement = document.getElementById('landing-page')
+
+    introVideoElement.style.display = 'none'
+    landingPageElement.style.display = 'initial'
+  }
+
   const backToTopElement = document.getElementById(backToTopElementTag)
   backToTopElement.onclick = scrollTop
+
+  // Intro video may be hiding the controls at the bottom of the page, which is confusing because the
+  // video starts with a black screen.  Auto-scroll to the bottom so that the player can show its elements.
+  const introVideoElement = document.getElementById('intro-video-player')
+  introVideoElement.addEventListener('canplay', () => {
+    window.scrollTo(0, introVideoElement.offsetHeight)
+  })
+
+  introVideoElement.addEventListener('ended', disableIntroVideoAndEnableMainLandingPage)
+
+  const skipIntroButtonElement = document.getElementById('skip-intro-button')
+  skipIntroButtonElement.onclick = disableIntroVideoAndEnableMainLandingPage
+
 </script>
