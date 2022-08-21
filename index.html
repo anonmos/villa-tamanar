@@ -169,7 +169,7 @@
       <img style="width: 60%;" src="./assets/gare-banner-text.svg" />
     </div>
   </div>
-  <div id="fifth-video-container" style="display: flex; justify-content: center; align-items: center; position: absolute; width: 100%; margin-top: -100px;">
+  <div id="fifth-video-container" style="display: flex; justify-content: center; align-items: center; position: absolute; width: 100%;">
     <video id="fifth-video" muted autoplay>
       <source src="./assets/Outro.mp4">
     </video>
@@ -208,7 +208,8 @@
   // the margin after the page and the video are loaded so that we know the exact video dimensions.
   outtroVideoTagWidthElement.addEventListener('canplay', () => {
     const fifthVideoContainerElement = document.getElementById(outtroVideoTagWidth)
-    const fifthVideoContainerElementMargin = Math.round(outtroVideoTagWidthElement.videoHeight / 4)
+    console.log(`Outtro video height reporting as: ${outtroVideoTagWidthElement.offsetHeight}`)
+    const fifthVideoContainerElementMargin = Math.round(outtroVideoTagWidthElement.offsetHeight / 2)
     fifthVideoContainerElement.style.marginTop = `-${fifthVideoContainerElementMargin}px`
 
     // Also need to update the text that should sit right below the video based on the dynamic amount.
