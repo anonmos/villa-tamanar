@@ -4,6 +4,18 @@
     body {
       margin: 0;
     }
+
+    .quad-banner-element {
+      width: 25%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    img.quad-banner-text {
+      width: 15%;
+      position: absolute;
+    }
   </style>
 </head>
 <body>
@@ -79,6 +91,43 @@
   <div style="margin-top: 150px;">
     <img style="width: 100%;" src="./assets/luxury-living-banner.svg" />
   </div>
+  <div style="display: flex; justify-content: center; align-items: center; width: 100%; margin-top: -5px;">
+    <div class="quad-banner-element">
+      <img style="width: 100%;" src="./assets/quad-banner-bedrooms-image.png" />
+      <img class="quad-banner-text" src="./assets/quad-banner-bedrooms-text.svg" />
+    </div>
+    <div class="quad-banner-element">
+      <img style="width: 100%;" src="./assets/quad-banner-living-space-image.png" />
+      <img class="quad-banner-text" src="./assets/quad-banner-living-space-text.svg" />
+    </div>
+    <div class="quad-banner-element">
+      <img style="width: 100%;" src="./assets/quad-banner-bathroom-image.png" />
+      <img class="quad-banner-text" src="./assets/quad-banner-bathrooms-text.svg" />
+    </div>
+    <div class="quad-banner-element">
+      <img style="width: 100%;" src="./assets/quad-banner-outdoor-image.png" />
+      <img style="width: 13%;" class="quad-banner-text" src="./assets/quad-banner-outdoor-text.svg" />
+    </div>
+  </div>
+  <div style="background-color: #232323; width: 100%; padding: 175px 0 0; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+    <img style="width: 80%;" src="./assets/what-if-banner.svg" />
+    <img style="margin-top: 25px;" src="./assets/once-upon-a-time-banner.svg" />
+  </div>
+  <div style="background-color: #232323; width: 100%; overflow-x: scroll; display: flex; padding-bottom: 100px;">
+    <img src="./assets/carousel-image-1.png" />
+    <img src="./assets/carousel-image-2.png" />
+    <img src="./assets/carousel-image-3.png" />
+    <img src="./assets/carousel-image-4.png" />
+    <img src="./assets/carousel-image-5.png" />
+    <img src="./assets/carousel-image-6.png" />
+    <img src="./assets/carousel-image-7.png" />
+    <img src="./assets/carousel-image-8.png" />
+    <img src="./assets/carousel-image-9.png" />
+  </div>
+  <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+    <img style="width: 100%;" src="./assets/attractive-people-banner-image.png" />
+    <img style="position: absolute; width: 100%;" src="./assets/attractive-people-banner-text.svg" />
+  </div>
 </body>
 </html>
 
@@ -101,7 +150,4 @@
       video.play()
     })
   }
-
-
-  // const secondVideoIntersectionObserver = new IntersectionObserver()
 </script>
