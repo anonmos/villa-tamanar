@@ -30,7 +30,7 @@
       <source src="./assets/Intro_1.mp4" />
     </video>
     <div id="skip-intro-button"
-      style="width: 180px; height: 50px; position: absolute; background-color: #FFFFFF; right: 0; bottom: 0; display: flex; justify-content: center; align-items: center; cursor: pointer;">
+      style="width: 180px; height: 50px; position: absolute; background-color: #FFFFFF; right: 0; display: flex; justify-content: center; align-items: center; cursor: pointer;">
       <img src="./assets/skip-intro-button-contents.svg" />
     </div>
   </div>
@@ -289,5 +289,7 @@
     disableIntroVideoAndEnableMainLandingPage()
     introVideoElement.pause()
   }
+
+  skipIntroButtonElement.style.top = `${introVideoElement.offsetHeight - 70}px`
 
 </script>
