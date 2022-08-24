@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <head>
+  <link rel="icon" type="image/jpeg" href="./assets/favicon.jpeg">
   <style>
     body {
       margin: 0;
@@ -26,7 +27,7 @@
 
 <body>
   <div id="intro-video" style="display: flex; justify-content: center;">
-    <video id="intro-video-player" controls>
+    <video id="intro-video-player" controls playsinline>
       <source src="./assets/Intro_1.mp4" />
     </video>
     <div id="skip-intro-button"
@@ -35,7 +36,7 @@
     </div>
   </div>
   <div id="landing-page" style="display: none;">
-    <video id="first-video" muted autoplay>
+    <video id="first-video" muted autoplay playsinline>
       <source src="./assets/Homepage.mp4">
     </video>
     <img style="width: 100%; margin: -5px 0 0;" src="./assets/second-image.png" />
@@ -43,7 +44,7 @@
       <img style="width: 60%;" src="./assets/dimensions.svg" />
     </div>
     <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-      <video id="second-video" muted autoplay>
+      <video id="second-video" muted autoplay playsinline>
         <source src="./assets/section-2.mp4">
       </video>
       <div style="display: flex; justify-content: flex-end; width: 100%; margin: -84px 0 0;">
@@ -82,7 +83,7 @@
       <div id="video-overlay" style="position: absolute; width: 100%;">
         <img style="width: 100%;" src="./assets/quote-vid-overlay.svg">
       </div>
-      <video id="third-video" muted autoplay>
+      <video id="third-video" muted autoplay playsinline>
         <source src="./assets/quote-01.mp4">
       </video>
     </div>
@@ -102,7 +103,7 @@
       </div>
     </div>
     <div style="margin-top: 200px;">
-      <video id="fourth-video" muted autoplay>
+      <video id="fourth-video" muted autoplay playsinline>
         <source src="./assets/Section5.mp4">
       </video>
     </div>
@@ -181,7 +182,7 @@
     </div>
     <div id="fifth-video-container"
       style="display: flex; justify-content: center; align-items: center; position: absolute; width: 100%;">
-      <video id="fifth-video" muted autoplay>
+      <video id="fifth-video" muted autoplay playsinline>
         <source src="./assets/Outro.mp4">
       </video>
     </div>
