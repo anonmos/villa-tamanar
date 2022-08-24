@@ -35,6 +35,14 @@
       <img src="./assets/skip-intro-button-contents.svg" />
     </div>
   </div>
+  <div id="navbar" style="width: 100%; display: none; position: fixed; margin-top: 20px; z-index: 9999;">
+    <div style="width: 100%; display: flex; justify-content: center; align-items: center; cursor: pointer;">
+      <img src="./assets/villa-tamanar-logo.svg" />
+    </div>
+    <div style="position: absolute; display: flex; justify-content: center; align-items: center; right: 5px; top: 0; cursor: pointer;">
+      <img src="./assets/hamburger.svg" />
+    </div>
+  </div>
   <div id="landing-page" style="display: none;">
     <video id="first-video" muted autoplay playsinline>
       <source src="./assets/Homepage.mp4">
@@ -211,6 +219,7 @@
   const outtroVideoTagWidthParentElement = 'fifth-video-container'
   const backToTopElementTag = 'back-to-top'
   const slidingElementId = 'carousel'
+  const navbarId = 'navbar'
   const slidingElement = document.getElementById(slidingElementId)
   let mouseDown = false
   let startX, scrollLeft
@@ -288,6 +297,10 @@
 
     const backToTopElement = document.getElementById(backToTopElementTag)
     backToTopElement.onclick = scrollTop
+
+    const navbarElement = document.getElementById(navbarId)
+    navbarElement.style.display = 'flex'
+    navbarElement.onclick = scrollTop
   }
 
   function disableIntroVideoAndEnableMainLandingPage() {
