@@ -64,9 +64,12 @@
     </div>
   </div>
   <div id="landing-page" style="display: none;">
-    <video id="first-video" muted autoplay playsinline>
-      <source src="./assets/Homepage.mp4">
-    </video>
+    <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+      <video id="first-video" muted autoplay playsinline>
+        <source src="./assets/Homepage.mp4">
+      </video>
+      <img src="./assets/first-video-overlay.svg" style="width: 100%; position: absolute; width: 30%;" />
+    </div>
     <img style="width: 100%; margin: -5px 0 0;" src="./assets/second-image.png" />
     <div style="display: flex; justify-content: center; align-items: center; margin: 100px 0;">
       <img style="width: 60%;" src="./assets/dimensions.svg" />
@@ -245,8 +248,8 @@
   let mouseDown = false
   let startX, scrollLeft
 
+  // If we're on mobile and we're vertical, show a message that they need to rotate
   document.addEventListener('DOMContentLoaded', () => {
-    console.log(`DOM content loaded!`)
     if (isMobile() && isVertical()) {
       showRotateMessage()
     } else {
@@ -255,8 +258,9 @@
     }
   })
 
+  // Detect a rotation and check if we're vertical.  Throw the vertical message if so.  Otherwise
+  // clear the vertical message.
   window.onresize = () => {
-    console.log(`Rotation detected!`)
     if (isMobile() && isVertical()) {
       showRotateMessage()
     } else {
@@ -265,8 +269,7 @@
     }
   }
 
-
-
+  /** Slim Aarons sliding carousel handling **/
   let startDragging = function (e) {
     mouseDown = true;
     startX = e.pageX - slidingElement.offsetLeft;
@@ -288,6 +291,8 @@
   slidingElement.addEventListener('mousedown', startDragging, false);
   slidingElement.addEventListener('mouseup', stopDragging, false);
   slidingElement.addEventListener('mouseleave', stopDragging, false);
+
+  /** End sliding carousel handling **/
 
   function performLandingPageSetup() {
     console.log(`Setting up landing page`)
@@ -365,6 +370,7 @@
     window.scrollTo(0, introVideoElement.offsetHeight)
   })
 
+  // Reset intro video width as part of setup, or as part of a screen rotation
   function resetIntroVideoWidth() {
     introVideoElement.setAttribute('width', window.innerWidth)
     skipIntroButtonElement.style.top = `${introVideoElement.offsetHeight - 70}px`
