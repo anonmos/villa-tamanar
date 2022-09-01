@@ -22,6 +22,15 @@
     html {
       scroll-behavior: smooth;
     }
+
+    .hidden-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .hidden-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
   </style>
 </head>
 
@@ -145,7 +154,7 @@
       <img style="margin-top: 25px; margin-bottom: 20px;" src="./assets/once-upon-a-time-banner.svg" />
     </div>
     <div id="carousel"
-      style="background-color: #232323; width: 100%; overflow-x: scroll; display: flex; padding-bottom: 100px;">
+      style="background-color: #232323; width: 100%; overflow-x: scroll; display: flex; padding-bottom: 100px;" class="hidden-scrollbar">
       <img src="./assets/carousel-image-1.png" />
       <img src="./assets/carousel-image-2.png" />
       <img src="./assets/carousel-image-3.png" />
