@@ -247,14 +247,14 @@
     }
   })
 
-  document.addEventListener('resize', () => {
+  window.onresize = () => {
     console.log(`Rotation detected!`)
     if (isMobile() && isVertical()) {
       showRotateMessage()
     } else {
       hideRotateMessage()
     }
-  })
+  }
 
 
 
