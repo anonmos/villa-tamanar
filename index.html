@@ -42,7 +42,7 @@
 </head>
 
 <body>
-  <div id="rotate-screen" class="special-message" style="display: none; justify-content: center; align-items: center; width: 80%; height: 100vh; font-size: 16px; text-align: center; margin: 0 auto;">
+  <div id="rotate-screen" class="special-message" style="display: none; justify-content: center; align-items: center; width: 80%; height: 100vh; font-size: 20px; text-align: center; margin: 0 auto;">
     Best viewed on desktop or tablet.  If viewing on mobile, please rotate device and refresh.
   </div>
   <div id="intro-video" style="display: flex; justify-content: center;">
@@ -443,7 +443,7 @@
     return landingPageElement.style.display !== 'none'
   }
 
-  // For some reason on Chrome Mobile views, elements set to "width: 100%;" are not fitting to the full width.
+  // For some reason on Chrome Mobile views, elements set to "width: 100%;" are not fitting to the full width after rotation.
   // Hack to fix this is to specify which elements aren't resizing properly and forcing them to be the width of
   // the page.
   function checkForChromeMobileWidthBug() {
