@@ -43,7 +43,7 @@
 
 <body>
   <div id="rotate-screen" class="special-message" style="display: none; justify-content: center; align-items: center; width: 80%; height: 100vh; font-size: 16px; text-align: center; margin: 0 auto;">
-    For the best viewing experience, please rotate your screen.
+    Best viewed on desktop or tablet.  If viewing on mobile, please rotate device and refresh.
   </div>
   <div id="intro-video" style="display: flex; justify-content: center;">
     <video id="intro-video-player" muted autoplay playsinline>
@@ -64,10 +64,11 @@
     </div>
   </div>
   <div id="landing-page" style="display: none;">
-    <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+    <div id="first-video-parent" style="width: 100%; display: flex; justify-content: center; align-items: center;">
       <video id="first-video" muted autoplay playsinline>
         <source src="./assets/Homepage.mp4">
       </video>
+      <div id="first-video-overlay" style="background: rgba(0, 0, 0, .5); position: absolute;"></div>
       <img src="./assets/first-video-overlay.svg" style="width: 100%; position: absolute; width: 30%;" />
     </div>
     <img style="width: 100%; margin: -5px 0 0;" src="./assets/second-image.png" />
@@ -324,6 +325,16 @@
     fullSizeVideoTagsArray.forEach((tag) => {
       const video = document.getElementById(tag)
       video.setAttribute('width', window.innerWidth)
+
+      console.log(`Handling tag: ${tag}`)
+
+      // Size the opacity layer to match the first video, if that's what we're on
+      if (tag === 'first-video') {
+        const opacityLayer = document.getElementById('first-video-overlay')
+        const firstVideoParent = document.getElementById('first-video-parent')
+        opacityLayer.style.width = '100%'
+        opacityLayer.style.height = `${firstVideoParent.offsetHeight}px`
+      }
     })
 
     const combinedTagsArray = [...videoTags, specialVideoTagWidth, outtroVideoTagWidth]
