@@ -187,7 +187,7 @@
       <img style="width: 55%;" src="./assets/description-banner-4-image.png" />
     </div>
     <div style="margin-top: 145px;">
-      <div id="video-overlay" style="position: absolute; width: 100%;">
+      <div id="third-video-overlay" style="position: absolute; width: 100%;">
         <img style="width: 100%;" src="./assets/quote-vid-overlay.svg">
       </div>
       <video id="third-video" muted autoplay playsinline>
@@ -547,6 +547,9 @@
       // Special case where we need an overlay to be dynamically set as well
       const firstVideoOverlay = document.getElementById('first-video-overlay')
       firstVideoOverlay.style.width = `${window.innerWidth}px`
+
+      const thirdVideoOverlay = document.getElementById('third-video-overlay')
+      thirdVideoOverlay.style.width = `${window.innerWidth}px`
     }
   }
 
