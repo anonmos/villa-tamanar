@@ -35,6 +35,33 @@
       scrollbar-width: none;
     }
 
+    /* Customize website's scrollbar like Mac OS
+    Not supports in Firefox and IE */
+
+    /* total width */
+    .mac-scrollbar::-webkit-scrollbar {
+        background-color: #fff;
+        width: 16px;
+        height: 5px;
+    }
+
+    /* background of the scrollbar except button or resizer */
+    .mac-scrollbar::-webkit-scrollbar-track {
+        background-color: #4f4f4f;
+    }
+
+    /* scrollbar itself */
+    .mac-scrollbar::-webkit-scrollbar-thumb {
+        background-color: #babac0;
+        border-radius: 16px;
+        border: 0.5px solid #babac0;
+    }
+
+    /* set button(top and bottom of the scrollbar) */
+    .mac-scrollbar::-webkit-scrollbar-button {
+        display:none;
+    }
+
     .special-message {
       font-family: 'Inter', sans-serif;
     }
@@ -244,8 +271,8 @@
       <img style="margin-top: 25px; margin-bottom: 20px;" src="./assets/once-upon-a-time-banner.svg" />
     </div>
     <div id="carousel"
-      style="background-color: #232323; width: 100%; overflow-x: scroll; display: flex; padding-bottom: 100px;"
-      class="hidden-scrollbar">
+      style="background-color: #232323; width: 100%; overflow-x: scroll; display: flex; padding-bottom: 30px;"
+      class="mac-scrollbar">
       <img src="./assets/carousel-image-1.png" />
       <img src="./assets/carousel-image-2.png" />
       <img src="./assets/carousel-image-3.png" />
@@ -256,6 +283,7 @@
       <img src="./assets/carousel-image-8.png" />
       <img src="./assets/carousel-image-9.png" />
     </div>
+    <div style="background-color: #232323; height: 200px; min-height: 200px; width: 100%"></div>
     <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
       <img style="width: 100%;" src="./assets/attractive-people-banner-image.png" />
       <img style="position: absolute; width: 100%;" src="./assets/attractive-people-banner-text.svg" />
