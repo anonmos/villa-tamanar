@@ -5,6 +5,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <script src="./libs/simple-lightbox.min.js"></script>
+  <link href="./libs/simple-lightbox.min.css" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -15,11 +17,18 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      cursor: pointer;
     }
 
     img.quad-banner-text {
       width: 15%;
       position: absolute;
+      opacity: 0;
+    }
+
+    img.qb-hover-effect {
+      opacity: 1;
+      transition: opacity 0.3s ease-in-out;
     }
 
     html {
@@ -137,6 +146,7 @@
     }
 
     /* End loading spinner CSS */
+
   </style>
 </head>
 
@@ -248,21 +258,21 @@
       <img style="width: 100%;" src="./assets/luxury-living-banner.svg" />
     </div>
     <div style="display: flex; justify-content: center; align-items: center; width: 100%; margin-top: -5px;">
-      <div class="quad-banner-element">
+      <div class="quad-banner-element" bedroom-gallery>
         <img style="width: 100%;" src="./assets/quad-banner-bedrooms-image.png" />
         <img class="quad-banner-text" src="./assets/quad-banner-bedrooms-text.svg" />
       </div>
-      <div class="quad-banner-element">
-        <img style="width: 100%;" src="./assets/quad-banner-living-space-image.png" />
-        <img class="quad-banner-text" src="./assets/quad-banner-living-space-text.svg" />
-      </div>
-      <div class="quad-banner-element">
+      <div class="quad-banner-element" bathroom-gallery>
         <img style="width: 100%;" src="./assets/quad-banner-bathroom-image.png" />
         <img class="quad-banner-text" src="./assets/quad-banner-bathrooms-text.svg" />
       </div>
-      <div class="quad-banner-element">
+      <div class="quad-banner-element" living-space-gallery>
+        <img style="width: 100%;" src="./assets/quad-banner-living-space-image.png" />
+        <img class="quad-banner-text" src="./assets/quad-banner-living-space-text.svg" />
+      </div>
+      <div class="quad-banner-element" outdoor-gallery>
         <img style="width: 100%;" src="./assets/quad-banner-outdoor-image.png" />
-        <img style="width: 13%;" class="quad-banner-text" src="./assets/quad-banner-outdoor-text.svg" />
+        <img class="quad-banner-text" style="width: 13%;" src="./assets/quad-banner-outdoor-text.svg" />
       </div>
     </div>
     <div
@@ -334,6 +344,55 @@
       <img id="back-to-top" style="width: 7%; cursor: pointer;" src="./assets/back-to-top.svg" />
       <img style="width: 10%;" src="./assets/copyright.svg" />
     </div>
+  </div>
+  <div class="bedroom-gallery" style="display: none;">
+    <a href="./assets/bedroom-gallery-1.jpg"><img src="./assets/bedroom-gallery-1.jpg" /></a>
+    <a href="./assets/bedroom-gallery-2.jpg"><img src="./assets/bedroom-gallery-2.jpg" /></a>
+    <a href="./assets/bedroom-gallery-3.jpg"><img src="./assets/bedroom-gallery-3.jpg" /></a>
+    <a href="./assets/bedroom-gallery-4.jpg"><img src="./assets/bedroom-gallery-4.jpg" /></a>
+    <a href="./assets/bedroom-gallery-5.jpg"><img src="./assets/bedroom-gallery-5.jpg" /></a>
+    <a href="./assets/bedroom-gallery-6.jpg"><img src="./assets/bedroom-gallery-6.jpg" /></a>
+    <a href="./assets/bedroom-gallery-7.jpg"><img src="./assets/bedroom-gallery-7.jpg" /></a>
+    <a href="./assets/bedroom-gallery-8.jpg"><img src="./assets/bedroom-gallery-8.jpg" /></a>
+  </div>
+  <div class="bathroom-gallery" style="display: none;">
+    <a href="./assets/bathroom-gallery-1.jpg"><img src="./assets/bathroom-gallery-1.jpg" /></a>
+    <a href="./assets/bathroom-gallery-2.jpg"><img src="./assets/bathroom-gallery-2.jpg" /></a>
+    <a href="./assets/bathroom-gallery-3.jpg"><img src="./assets/bathroom-gallery-3.jpg" /></a>
+    <a href="./assets/bathroom-gallery-4.jpg"><img src="./assets/bathroom-gallery-4.jpg" /></a>
+    <a href="./assets/bathroom-gallery-5.jpg"><img src="./assets/bathroom-gallery-5.jpg" /></a>
+    <a href="./assets/bathroom-gallery-6.jpg"><img src="./assets/bathroom-gallery-6.jpg" /></a>
+    <a href="./assets/bathroom-gallery-7.jpg"><img src="./assets/bathroom-gallery-7.jpg" /></a>
+    <a href="./assets/bathroom-gallery-8.jpg"><img src="./assets/bathroom-gallery-8.jpg" /></a>
+    <a href="./assets/bathroom-gallery-9.jpg"><img src="./assets/bathroom-gallery-9.jpg" /></a>
+  </div>
+  <div class="living-space-gallery" style="display: none;">
+    <a href="./assets/living-space-gallery-1.jpg"><img src="./assets/living-space-gallery-1.jpg"></a>
+    <a href="./assets/living-space-gallery-2.jpg"><img src="./assets/living-space-gallery-2.jpg"></a>
+    <a href="./assets/living-space-gallery-3.jpg"><img src="./assets/living-space-gallery-3.jpg"></a>
+    <a href="./assets/living-space-gallery-4.jpg"><img src="./assets/living-space-gallery-4.jpg"></a>
+    <a href="./assets/living-space-gallery-5.jpg"><img src="./assets/living-space-gallery-5.jpg"></a>
+    <a href="./assets/living-space-gallery-6.jpg"><img src="./assets/living-space-gallery-6.jpg"></a>
+    <a href="./assets/living-space-gallery-7.jpg"><img src="./assets/living-space-gallery-7.jpg"></a>
+    <a href="./assets/living-space-gallery-8.jpg"><img src="./assets/living-space-gallery-8.jpg"></a>
+    <a href="./assets/living-space-gallery-9.jpg"><img src="./assets/living-space-gallery-9.jpg"></a>
+    <a href="./assets/living-space-gallery-10.jpg"><img src="./assets/living-space-gallery-10.jpg"></a>
+    <a href="./assets/living-space-gallery-11.jpg"><img src="./assets/living-space-gallery-11.jpg"></a>
+  </div>
+  <div class="outdoor-gallery" style="display: none;">
+    <a href="./assets/outdoor-gallery-1.jpg"><img src="./assets/outdoor-gallery-1.jpg"></a>
+    <a href="./assets/outdoor-gallery-2.jpg"><img src="./assets/outdoor-gallery-2.jpg"></a>
+    <a href="./assets/outdoor-gallery-3.jpg"><img src="./assets/outdoor-gallery-3.jpg"></a>
+    <a href="./assets/outdoor-gallery-4.jpg"><img src="./assets/outdoor-gallery-4.jpg"></a>
+    <a href="./assets/outdoor-gallery-5.jpg"><img src="./assets/outdoor-gallery-5.jpg"></a>
+    <a href="./assets/outdoor-gallery-6.jpg"><img src="./assets/outdoor-gallery-6.jpg"></a>
+    <a href="./assets/outdoor-gallery-7.jpg"><img src="./assets/outdoor-gallery-7.jpg"></a>
+    <a href="./assets/outdoor-gallery-8.jpg"><img src="./assets/outdoor-gallery-8.jpg"></a>
+    <a href="./assets/outdoor-gallery-9.jpg"><img src="./assets/outdoor-gallery-9.jpg"></a>
+    <a href="./assets/outdoor-gallery-10.jpg"><img src="./assets/outdoor-gallery-10.jpg"></a>
+    <a href="./assets/outdoor-gallery-11.jpg"><img src="./assets/outdoor-gallery-11.jpg"></a>
+    <a href="./assets/outdoor-gallery-12.png"><img src="./assets/outdoor-gallery-5.png"></a>
+    <a href="./assets/outdoor-gallery-13.jpg"><img src="./assets/outdoor-gallery-13.jpg"></a>
   </div>
 </body>
 
@@ -578,6 +637,38 @@
 
       const thirdVideoOverlay = document.getElementById('third-video-overlay')
       thirdVideoOverlay.style.width = `${window.innerWidth}px`
+    }
+  }
+
+  let bedroomGallery = new SimpleLightbox('.bedroom-gallery a')
+  let bathroomGallery = new SimpleLightbox('.bathroom-gallery a')
+  let livingSpaceGallery = new SimpleLightbox('.living-space-gallery a')
+  let outdoorGallery = new SimpleLightbox('.outdoor-gallery a')
+
+  const lightboxRefs = [bedroomGallery, bathroomGallery, livingSpaceGallery, outdoorGallery]
+  
+  const quadBannerElements = document.getElementsByClassName('quad-banner-element')
+  for (let i = 0; i < quadBannerElements.length; ++i) {
+    const quadBannerElement = quadBannerElements[i]
+    
+    quadBannerElement.addEventListener('mouseover', (e) => {
+      const targetElement = e.target
+      const trueTarget = targetElement.tagName !== 'DIV' ? targetElement.parentElement : targetElement
+
+      const bannerElementText = trueTarget.getElementsByClassName('quad-banner-text')[0]
+      bannerElementText.classList.add('qb-hover-effect')
+    })
+
+    quadBannerElement.addEventListener('mouseout', (e) => {
+      const targetElement = e.target
+      const trueTarget = targetElement.tagName !== 'DIV' ? targetElement.parentElement : targetElement
+
+      const bannerElementText = trueTarget.getElementsByClassName('quad-banner-text')[0]
+      bannerElementText.classList.remove('qb-hover-effect')
+    } )
+    
+    quadBannerElement.onclick = () => {
+      lightboxRefs[i].open()
     }
   }
 
