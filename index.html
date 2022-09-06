@@ -216,7 +216,7 @@
       <img id="scroll-chevron" class="bounce" src="./assets/angle-down-solid.svg"
         style="position: absolute; width: 30px; height: 30px; bottom: 20px; cursor: pointer;" />
     </div>
-    <img id="second-image" style="width: 100%; margin: -5px 0 0;" src="./assets/second-image.png" />
+    <img id="second-image" style="width: 100%; margin: -5px 0 0; height: 764px; object-fit: cover;" src="./assets/second-image.png" />
     <div id="dimensions" style="display: flex; justify-content: center; align-items: center; margin: 29px 0;">
       <img style="width: 60%;" src="./assets/dimensions.svg" />
     </div>
@@ -293,19 +293,19 @@
     </div>
     <div style="display: flex; justify-content: center; align-items: center; width: 100%; margin-top: -5px;">
       <div class="quad-banner-element" bedroom-gallery>
-        <img style="width: 100%;" src="./assets/quad-banner-bedrooms-image.png" />
+        <img class="quad-banner-img" src="./assets/quad-banner-bedrooms-image.png" style="object-fit: cover;" />
         <img class="quad-banner-text" src="./assets/quad-banner-bedrooms-text.svg" />
       </div>
       <div class="quad-banner-element" bathroom-gallery>
-        <img style="width: 100%;" src="./assets/quad-banner-bathroom-image.png" />
+        <img class="quad-banner-img" src="./assets/quad-banner-bathroom-image.png" style="object-fit: cover;" />
         <img class="quad-banner-text" src="./assets/quad-banner-bathrooms-text.svg" />
       </div>
-      <div class="quad-banner-element" living-space-gallery>
-        <img style="width: 100%;" src="./assets/quad-banner-living-space-image.png" />
+      <div class="quad-banner-element" style="margin: 0 0 0 0" living-space-gallery>
+        <img class="quad-banner-img" src="./assets/quad-banner-living-space-image.png" style="object-fit: cover;" />
         <img class="quad-banner-text" src="./assets/quad-banner-living-space-text.svg" />
       </div>
-      <div class="quad-banner-element" outdoor-gallery>
-        <img style="width: 100%;" src="./assets/quad-banner-outdoor-image.png" />
+      <div class="quad-banner-element" style="margin: 0 0 0 -1px" outdoor-gallery>
+        <img class="quad-banner-img" src="./assets/quad-banner-outdoor-image.png" style="object-fit: cover;" />
         <img class="quad-banner-text" style="width: 13%;" src="./assets/quad-banner-outdoor-text.svg" />
       </div>
     </div>
@@ -369,7 +369,7 @@
     </div>
     <div style="width: 100%; display: flex; justify-content: center;">
       <img style="width: 100%;" src="./assets/villa-tamanar-cartoon.png" />
-      <img id="escape-noise-text" style="width: 20%; position: absolute; margin-top: 50px;"
+      <img id="escape-noise-text" style="width: 20%; position: absolute; margin-top: 250px;"
         src="./assets/villa-tamanar-escape-noise-text.svg" />
     </div>
     <div
@@ -529,8 +529,8 @@
 
     // Also need to update the text that should sit right below the video based on the dynamic amount.
     const escapeNoiseTextElement = document.getElementById('escape-noise-text')
-    const escapeNoiseTextElementMarginTop = outtroVideoTagWidthElement.videoHeight
-    escapeNoiseTextElement.style.marginTop = `${escapeNoiseTextElementMarginTop}px`
+    // const escapeNoiseTextElementMarginTop = outtroVideoTagWidthElement.videoHeight
+    // escapeNoiseTextElement.style.marginTop = `${escapeNoiseTextElementMarginTop}px`
 
     const fullSizeVideoTagsArray = [...videoTags]
 
@@ -576,6 +576,7 @@
     navbarElement.onclick = scrollTop
 
     checkForChromeMobileWidthBug()
+    fixQuadBannerImageElementWhiteLinesBug()
   }
 
   const landingPageElement = document.getElementById('landing-page')
@@ -713,6 +714,18 @@
 
     quadBannerElement.onclick = () => {
       lightboxRefs[i].open()
+    }
+  }
+
+  function fixQuadBannerImageElementWhiteLinesBug() {
+    const bannerImages = document.getElementsByClassName('quad-banner-img')
+
+    for (let i = 0; i < bannerImages.length; ++i) {
+      const bannerImage = bannerImages[i]
+      const bannerImageParent = bannerImage.parentElement
+      const bannerImageParentWidth = bannerImageParent.offsetWidth
+
+      bannerImage.style.width = `${Math.ceil(bannerImageParentWidth) + 1}px`
     }
   }
 
