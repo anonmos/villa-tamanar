@@ -49,26 +49,26 @@
 
     /* total width */
     .mac-scrollbar::-webkit-scrollbar {
-        background-color: #fff;
-        width: 16px;
-        height: 5px;
+      background-color: #fff;
+      width: 16px;
+      height: 5px;
     }
 
     /* background of the scrollbar except button or resizer */
     .mac-scrollbar::-webkit-scrollbar-track {
-        background-color: #4f4f4f;
+      background-color: #4f4f4f;
     }
 
     /* scrollbar itself */
     .mac-scrollbar::-webkit-scrollbar-thumb {
-        background-color: #babac0;
-        border-radius: 16px;
-        border: 0.5px solid #babac0;
+      background-color: #babac0;
+      border-radius: 16px;
+      border: 0.5px solid #babac0;
     }
 
     /* set button(top and bottom of the scrollbar) */
     .mac-scrollbar::-webkit-scrollbar-button {
-        display:none;
+      display: none;
     }
 
     .special-message {
@@ -147,6 +147,32 @@
 
     /* End loading spinner CSS */
 
+    /* Start bouncing arrow CSS */
+
+    .bounce {
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+
+      0%,
+      20%,
+      50%,
+      80%,
+      100% {
+        transform: translateY(0);
+      }
+
+      40% {
+        transform: translateY(-30px);
+      }
+
+      60% {
+        transform: translateY(-15px);
+      }
+    }
+
+    /* End bouncing arrow CSS */
   </style>
 </head>
 
@@ -155,8 +181,14 @@
     style="display: none; justify-content: center; align-items: center; width: 80%; height: 100vh; font-size: 40px; text-align: center; margin: 0 auto;">
     Best viewed on desktop or tablet. If viewing on mobile, please rotate device and refresh.
   </div>
-  <div id="intro-video" style="display: flex; justify-content: center; align-items: center; background-color: black; height: 100vh;">
-    <div id="loading-spinner" class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+  <div id="intro-video"
+    style="display: flex; justify-content: center; align-items: center; background-color: black; height: 100vh;">
+    <div id="loading-spinner" class="lds-ellipsis">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
     <video id="intro-video-player" muted autoplay playsinline>
       <source src="./assets/Intro_1.mp4" />
     </video>
@@ -165,18 +197,24 @@
       <img src="./assets/skip-intro-button-contents.svg" />
     </div>
   </div>
-  <div id="navbar" style="width: 100%; display: none; position: fixed; z-index: 9999; background-color: white; height: 50px;">
+  <div id="navbar"
+    style="width: 100%; display: none; position: fixed; z-index: 9999; background-color: white; height: 50px;">
     <div style="width: 100%; display: flex; justify-content: center; align-items: center; cursor: pointer;">
       <img src="./assets/villa-tamanar-logo-black.svg" />
     </div>
   </div>
   <div id="landing-page" style="display: none;">
-    <div id="first-video-parent" style="width: 100%; display: flex; justify-content: center; align-items: center; height: 1110px; background-color: black;">
+    <div id="first-video-parent"
+      style="width: 100%; display: flex; justify-content: center; align-items: center; height: 1110px; background-color: black;">
       <video id="first-video" muted autoplay playsinline>
         <source src="./assets/Homepage.mp4">
       </video>
-      <div id="first-video-overlay" style="background: rgba(0, 0, 0, .5); position: absolute; height: 768px; width: 100%;"></div>
-      <img src="./assets/first-video-overlay.svg" style="width: 100%; position: absolute; width: 30%; height: 1118px;" />
+      <div id="first-video-overlay"
+        style="background: rgba(0, 0, 0, .5); position: absolute; height: 768px; width: 100%;"></div>
+      <img src="./assets/first-video-overlay.svg"
+        style="width: 100%; position: absolute; width: 30%; height: 1118px;" />
+      <img id="scroll-chevron" class="bounce" src="./assets/angle-down-solid.svg"
+        style="position: absolute; width: 30px; height: 30px; bottom: 20px; cursor: pointer;" />
     </div>
     <img id="second-image" style="width: 100%; margin: -5px 0 0;" src="./assets/second-image.png" />
     <div id="dimensions" style="display: flex; justify-content: center; align-items: center; margin: 29px 0;">
@@ -404,6 +442,8 @@
   const slidingElementId = 'carousel'
   const navbarId = 'navbar'
   const slidingElement = document.getElementById(slidingElementId)
+  const firstSectionScrollPosition = 1056;
+  const scrollChevron = document.getElementById('scroll-chevron')
   let mouseDown = false
   let startX, scrollLeft
 
@@ -462,6 +502,13 @@
   /** End sliding carousel handling **/
 
   function performLandingPageSetup() {
+    scrollChevron.onclick = () => {
+      window.scrollTo({
+        top: firstSectionScrollPosition,
+        behavior: 'smooth'
+      })
+    }
+
     console.log(`Setting up landing page`)
     // Second video needs a special width so that it's not the full page
     const specialVideoWidthVideoElement = document.getElementById(specialVideoTagWidth);
@@ -643,11 +690,11 @@
   let outdoorGallery = new SimpleLightbox('.outdoor-gallery a')
 
   const lightboxRefs = [bedroomGallery, bathroomGallery, livingSpaceGallery, outdoorGallery]
-  
+
   const quadBannerElements = document.getElementsByClassName('quad-banner-element')
   for (let i = 0; i < quadBannerElements.length; ++i) {
     const quadBannerElement = quadBannerElements[i]
-    
+
     quadBannerElement.addEventListener('mouseover', (e) => {
       const targetElement = e.target
       const trueTarget = targetElement.tagName !== 'DIV' ? targetElement.parentElement : targetElement
@@ -662,8 +709,8 @@
 
       const bannerElementText = trueTarget.getElementsByClassName('quad-banner-text')[0]
       bannerElementText.classList.remove('qb-hover-effect')
-    } )
-    
+    })
+
     quadBannerElement.onclick = () => {
       lightboxRefs[i].open()
     }
