@@ -155,7 +155,7 @@
     style="display: none; justify-content: center; align-items: center; width: 80%; height: 100vh; font-size: 40px; text-align: center; margin: 0 auto;">
     Best viewed on desktop or tablet. If viewing on mobile, please rotate device and refresh.
   </div>
-  <div id="intro-video" style="display: flex; justify-content: center; align-items: center;">
+  <div id="intro-video" style="display: flex; justify-content: center; align-items: center; background-color: black; height: 100vh;">
     <div id="loading-spinner" class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
     <video id="intro-video-player" muted autoplay playsinline>
       <source src="./assets/Intro_1.mp4" />
@@ -165,25 +165,21 @@
       <img src="./assets/skip-intro-button-contents.svg" />
     </div>
   </div>
-  <div id="navbar" style="width: 100%; display: none; position: fixed; margin-top: 20px; z-index: 9999;">
+  <div id="navbar" style="width: 100%; display: none; position: fixed; z-index: 9999; background-color: white; height: 50px;">
     <div style="width: 100%; display: flex; justify-content: center; align-items: center; cursor: pointer;">
-      <img src="./assets/villa-tamanar-logo.svg" />
-    </div>
-    <div
-      style="position: absolute; display: flex; justify-content: center; align-items: center; right: 5px; top: 0; cursor: pointer;">
-      <img src="./assets/hamburger.svg" />
+      <img src="./assets/villa-tamanar-logo-black.svg" />
     </div>
   </div>
   <div id="landing-page" style="display: none;">
-    <div id="first-video-parent" style="width: 100%; display: flex; justify-content: center; align-items: center;">
+    <div id="first-video-parent" style="width: 100%; display: flex; justify-content: center; align-items: center; height: 1110px; background-color: black;">
       <video id="first-video" muted autoplay playsinline>
         <source src="./assets/Homepage.mp4">
       </video>
-      <div id="first-video-overlay" style="background: rgba(0, 0, 0, .5); position: absolute;"></div>
-      <img src="./assets/first-video-overlay.svg" style="width: 100%; position: absolute; width: 30%;" />
+      <div id="first-video-overlay" style="background: rgba(0, 0, 0, .5); position: absolute; height: 768px; width: 100%;"></div>
+      <img src="./assets/first-video-overlay.svg" style="width: 100%; position: absolute; width: 30%; height: 1118px;" />
     </div>
     <img id="second-image" style="width: 100%; margin: -5px 0 0;" src="./assets/second-image.png" />
-    <div id="dimensions" style="display: flex; justify-content: center; align-items: center; margin: 100px 0;">
+    <div id="dimensions" style="display: flex; justify-content: center; align-items: center; margin: 29px 0;">
       <img style="width: 60%;" src="./assets/dimensions.svg" />
     </div>
     <div id="second-video-parent"
@@ -498,13 +494,14 @@
 
       console.log(`Handling tag: ${tag}`)
 
-      // Size the opacity layer to match the first video, if that's what we're on
+      // Size the opacity layer to match the first video, if that's what we're on.
+      /* Comment out for now since we're hardcoding the opacity layer
       if (tag === 'first-video') {
         const opacityLayer = document.getElementById('first-video-overlay')
         const firstVideoParent = document.getElementById('first-video-parent')
         opacityLayer.style.width = '100%'
         opacityLayer.style.height = `${firstVideoParent.offsetHeight}px`
-      }
+      }*/
     })
 
     const combinedTagsArray = [...videoTags, specialVideoTagWidth, outtroVideoTagWidth]
