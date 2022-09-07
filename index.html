@@ -209,7 +209,7 @@
       <video id="first-video" muted autoplay playsinline>
         <source src="./assets/Homepage.mp4">
       </video>
-      <div id="first-video-overlay"
+      <div id="first-video-mask"
         style="background: rgba(0, 0, 0, .5); position: absolute; height: 768px; width: 100%;"></div>
       <img src="./assets/first-video-overlay.svg"
         style="width: 100%; position: absolute; width: 30%; height: 1118px;" />
@@ -291,7 +291,7 @@
     <div style="margin-top: 150px;">
       <img style="width: 100%;" src="./assets/luxury-living-banner.svg" />
     </div>
-    <div style="display: flex; justify-content: center; align-items: center; width: 100%; margin-top: -5px;">
+    <div style="display: flex; justify-content: center; align-items: center; width: 100%; margin-top: -5px; background-color: #232323;">
       <div class="quad-banner-element" bedroom-gallery>
         <img class="quad-banner-img" src="./assets/quad-banner-bedrooms-image.png" style="object-fit: cover;" />
         <img class="quad-banner-text" src="./assets/quad-banner-bedrooms-text.svg" />
@@ -542,13 +542,11 @@
       console.log(`Handling tag: ${tag}`)
 
       // Size the opacity layer to match the first video, if that's what we're on.
-      /* Comment out for now since we're hardcoding the opacity layer
       if (tag === 'first-video') {
-        const opacityLayer = document.getElementById('first-video-overlay')
-        const firstVideoParent = document.getElementById('first-video-parent')
+        const opacityLayer = document.getElementById('first-video-mask')
         opacityLayer.style.width = '100%'
-        opacityLayer.style.height = `${firstVideoParent.offsetHeight}px`
-      }*/
+        opacityLayer.style.height = `${video.videoHeight}px`
+      }
     })
 
     const combinedTagsArray = [...videoTags, specialVideoTagWidth, outtroVideoTagWidth]
@@ -677,7 +675,7 @@
       }
 
       // Special case where we need an overlay to be dynamically set as well
-      const firstVideoOverlay = document.getElementById('first-video-overlay')
+      const firstVideoOverlay = document.getElementById('first-video-mask')
       firstVideoOverlay.style.width = `${window.innerWidth}px`
 
       const thirdVideoOverlay = document.getElementById('third-video-overlay')
