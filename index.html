@@ -23,7 +23,7 @@
     img.quad-banner-text {
       width: 15%;
       position: absolute;
-      opacity: 0;
+      opacity: 1;
     }
 
     img.qb-hover-effect {
@@ -701,7 +701,8 @@
   for (let i = 0; i < quadBannerElements.length; ++i) {
     const quadBannerElement = quadBannerElements[i]
 
-    quadBannerElement.addEventListener('mouseover', (e) => {
+    // Moved away from this hover effect, but keeping it around just in case.
+    /*quadBannerElement.addEventListener('mouseover', (e) => {
       const targetElement = e.target
       const trueTarget = targetElement.tagName !== 'DIV' ? targetElement.parentElement : targetElement
 
@@ -715,7 +716,7 @@
 
       const bannerElementText = trueTarget.getElementsByClassName('quad-banner-text')[0]
       bannerElementText.classList.remove('qb-hover-effect')
-    })
+    })*/
 
     quadBannerElement.onclick = () => {
       lightboxRefs[i].open()
